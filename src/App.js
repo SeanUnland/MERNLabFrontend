@@ -105,12 +105,14 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Choose Your Cat</h1>
       <Link to="/create">
         <button>Add Cat </button>
       </Link>
       <main>
         <Switch>
-          <exact
+          <Route
+            exact
             path="/"
             render={(rp) => (
               <Display

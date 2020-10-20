@@ -12,28 +12,31 @@ const Form = (props) => {
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="name"
-        value={formData.name}
-        onChange={handleChange}
-      />
-      <input
-        type="number"
-        name="age"
-        value={formData.age}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="img"
-        value={formData.img}
-        onChange={handleChange}
-      />
-      <input type="submit" value={props.label} />
-    </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+        <input
+          type="number"
+          name="age"
+          value={formData.age}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="img"
+          value={formData.img}
+          onChange={handleChange}
+        />
+        <input type="submit" value={props.label} />
+      </form>
+    </div>
   );
 };
 

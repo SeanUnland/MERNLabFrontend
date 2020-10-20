@@ -7,7 +7,7 @@ const Display = (props) => {
     <div style={{ textAlign: "center" }}>
       {cats.map((cat) => (
         <article>
-          <img src={cat.img} />
+          <img src={cat.img} alt="" />
           <h1>{cat.name}</h1>
           <h3>{cat.age}</h3>
           <button
