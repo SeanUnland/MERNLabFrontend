@@ -33,3 +33,28 @@ const Display = (props) => {
 };
 
 export default Display;
+
+// return (
+//   <>
+//     <article>
+//       <img src={cats.img} alt="" />
+//       <h1>{cats.name}</h1>
+//       <h3>{cats.age}</h3>
+//       <button
+//         onClick={() => {
+//           props.selectCat(cats);
+//           props.history.push("/edit");
+//         }}
+//       >
+//         Edit
+//       </button>
+//       <button
+//         onClick={() => {
+//           props.deleteCat(cats);
+//         }}
+//       >
+//         Delete
+//       </button>
+//     </article>
+//   </>
+// );
