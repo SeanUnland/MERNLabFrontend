@@ -105,7 +105,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Choose Your Cat</h1>
+      <h1>Match Your Cat and Owner</h1>
       <Link to="/create">
         <button>Add Cat </button>
       </Link>
