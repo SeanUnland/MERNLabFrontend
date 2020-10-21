@@ -33,7 +33,7 @@ function App() {
     fetch(url + "/cats/")
       .then((response) => response.json())
       .then((data) => {
-        setCats(data);
+        setCats(data.data);
         console.log(`data`, data);
       });
   };

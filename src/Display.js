@@ -1,7 +1,8 @@
 import React from "react";
 
 const Display = (props) => {
-  const { cats } = props;
+  const cats = props.cats;
+  console.log(`display -`, props);
 
   const loaded = () => (
     <div style={{ textAlign: "center" }}>
