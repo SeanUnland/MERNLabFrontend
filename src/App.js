@@ -115,6 +115,7 @@ function App() {
       <h1>Match Your Cat and Owner</h1>
       <Link to="/create">
         <button>Add Cat </button>
+        <button>Add Owner</button>
       </Link>
       <main>
         <Switch>
