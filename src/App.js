@@ -6,7 +6,7 @@ import Form from "./Form";
 
 function App() {
   // const url = "mongodb://localhost:27017/catsapi";
-  const url = "http://localhost:4000/cats";
+  const url = "http://localhost:4000/";
 
   const [cats, setCats] = React.useState([]);
 
