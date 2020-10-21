@@ -29,7 +29,8 @@ const Display = (props) => {
       ))}
     </div>
   );
-  return cats.length > 0 ? loaded() : <h1>Loading...</h1>;
+
+  return cats > 0 ? loaded() : <h1>Loading...</h1>;
   //   return loaded();
 };
 

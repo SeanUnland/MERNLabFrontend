@@ -6,7 +6,7 @@ import Form from "./Form";
 
 function App() {
   // const url = "mongodb://localhost:27017/catsapi";
-  const url = "http://localhost:4000/";
+  const url = "https://mernlabbackendsu.herokuapp.com/";
 
   const [cats, setCats] = React.useState([]);
 
@@ -50,7 +50,7 @@ function App() {
   // }, []);
 
   const handleCreate = (newCat) => {
-    fetch(url + "/cats", {
+    fetch(url + "/cats/", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -98,7 +98,7 @@ function App() {
   };
 
   const deleteCat = (cat) => {
-    fetch(url + "/cats" + cats._id, {
+    fetch(url + "/cats" + cat._id, {
       method: "delete",
     }).then((response) => getCats());
   };
@@ -118,7 +118,7 @@ function App() {
               <Display
                 {...rp}
                 cats={cats}
-                selecyCat={selectCat}
+                selectCat={selectCat}
                 deleteCat={deleteCat}
               />
             )}
