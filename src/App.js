@@ -5,31 +5,36 @@ import Display from "./Display";
 import Form from "./Form";
 
 function App() {
+  // URL VARIBLE
   // const url = "mongodb://localhost:27017/catsapi";
-  const url = "https://mernlabbackendsu.herokuapp.com/";
+  const url = "https://mernlabbackendsu.herokuapp.com";
 
   const [cats, setCats] = React.useState([]);
 
+  // empty cat for form
   const emptyCat = {
     name: "",
     age: 0,
     img: "",
   };
-
+  // empty owner for form
   const emptyOwner = {
     name: "",
     age: 0,
   };
 
+  // selectCat for user to select an update a cat
   const [selectedCat, setSelectedCat] = React.useState(emptyCat);
 
   const [selectedOwner, setSelectedOwner] = React.useState(emptyOwner);
 
+  // function to fetch cats
   const getCats = () => {
     fetch(url + "/cats/")
       .then((response) => response.json())
       .then((data) => {
         setCats(data);
+        console.log(`data`, data);
       });
   };
 
@@ -41,6 +46,7 @@ function App() {
   //     });
   // };
 
+  // get cats on page load
   React.useEffect(() => {
     getCats();
   }, []);
@@ -49,6 +55,7 @@ function App() {
   //   getOwners();
   // }, []);
 
+  // for creating cats
   const handleCreate = (newCat) => {
     fetch(url + "/cats/", {
       method: "post",
@@ -69,13 +76,13 @@ function App() {
   //   }).then((response) => getOwners());
   // };
 
-  const handleUpdate = (cat) => {
+  const handleUpdate = (cats) => {
     fetch(url + "/cats/" + cats._id, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(cat),
+      body: JSON.stringify(cats),
     }).then((response) => getCats());
   };
 
@@ -89,16 +96,16 @@ function App() {
   //   }).then((response) => getOwners());
   // };
 
-  const selectCat = (cat) => {
-    setSelectedCat(cat);
+  const selectCat = (cats) => {
+    setSelectedCat(cats);
   };
 
-  const selectOwner = (owner) => {
-    setSelectedOwner(owner);
+  const selectOwner = (owners) => {
+    setSelectedOwner(owners);
   };
 
-  const deleteCat = (cat) => {
-    fetch(url + "/cats" + cat._id, {
+  const deleteCat = (cats) => {
+    fetch(url + "/cats" + cats._id, {
       method: "delete",
     }).then((response) => getCats());
   };
